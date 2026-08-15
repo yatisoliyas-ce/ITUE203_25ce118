@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | StudentHub</title>
+  <meta name="description" content="Log in to your StudentHub account.">
+</head>
+<body>
+
+  <a href="#main">Skip to main content</a>
+
+  <header>
+    <p><strong>StudentHub</strong> &mdash; Student Portal</p>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html" aria-current="page">Login</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="Student Portal">
+      <ul>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <nav aria-label="Breadcrumb">
+    <ol>
+      <li><a href="index.html">Home</a></li>
+      <li aria-current="page">Login</li>
+    </ol>
+  </nav>
+
+  <main id="main">
+
+    <h1>Log in to StudentHub</h1>
+    <p>This form does not submit anywhere; it is a static demonstration page.</p>
+
+    <form action="#" method="post">
+      <p>
+        <label for="login-email">Email address</label><br>
+        <input type="email" id="login-email" name="email" autocomplete="email" required>
+      </p>
+
+      <p>
+        <label for="login-password">Password</label><br>
+        <input type="password" id="login-password" name="password" autocomplete="current-password" required>
+      </p>
+
+      <p>
+        <input type="checkbox" id="remember" name="remember">
+        <label for="remember">Keep me signed in on this device</label>
+      </p>
+
+      <p>
+        <button type="submit">Log in</button>
+      </p>
+    </form>
+
+    <nav aria-label="Login help links">
+      <ul>
+        <li><a href="#">Forgot your password?</a></li>
+        <li>New here? <a href="register.html">Create an account</a></li>
+        <li>Need help? <a href="contact.html">Contact support</a></li>
+      </ul>
+    </nav>
+
+  </main>
+
+  <footer>
+    <h2>StudentHub</h2>
+    <nav aria-label="Footer">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <p><small>&copy; 2026 StudentHub. Practical project &mdash; no real data is stored.</small></p>
+  </footer>
+
+</body>
+</html>

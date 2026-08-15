@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | StudentHub</title>
+  <meta name="description" content="Contact the StudentHub registrar's office and support team.">
+</head>
+<body>
+
+  <a href="#main">Skip to main content</a>
+
+  <header>
+    <p><strong>StudentHub</strong> &mdash; Student Portal</p>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="Student Portal">
+      <ul>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <nav aria-label="Breadcrumb">
+    <ol>
+      <li><a href="index.html">Home</a></li>
+      <li aria-current="page">Contact</li>
+    </ol>
+  </nav>
+
+  <main id="main">
+
+    <h1>Contact us</h1>
+
+    <section aria-labelledby="details-heading">
+      <h2 id="details-heading">Office details</h2>
+      <address>
+        StudentHub Registrar's Office<br>
+        building A7, Main Campus<br>
+        kheda, Gujarat, India<br>
+        Email: <a href="mailto:support@studenthub.example">support@studenthub.example</a><br>
+        Phone: <a href="tel:+911234567890">+91 12345 67890</a>
+      </address>
+      <p>Office hours: Monday to Friday, 9:00 AM to 5:00 PM.</p>
+    </section>
+
+    <section aria-labelledby="form-heading">
+      <h2 id="form-heading">Send a message</h2>
+      <p>This form does not submit anywhere; it is a static demonstration page.</p>
+
+      <form action="#" method="post">
+        <p>
+          <label for="c-name">Full name <abbr title="required">*</abbr></label><br>
+          <input type="text" id="c-name" name="name" autocomplete="name" required>
+        </p>
+
+        <p>
+          <label for="c-email">Email address <abbr title="required">*</abbr></label><br>
+          <input type="email" id="c-email" name="email" autocomplete="email" required>
+        </p>
+
+        <p>
+          <label for="c-subject">Subject <abbr title="required">*</abbr></label><br>
+          <select id="c-subject" name="subject" required>
+            <option value="">Select a subject</option>
+            <option value="admissions">Admissions</option>
+            <option value="technical">Technical support</option>
+            <option value="fees">Fees &amp; payments</option>
+            <option value="other">Other</option>
+          </select>
+        </p>
+
+        <p>
+          <label for="c-message">Message <abbr title="required">*</abbr></label><br>
+          <textarea id="c-message" name="message" rows="6" cols="50" required></textarea>
+        </p>
+
+        <p>
+          <button type="submit">Send message</button>
+          <button type="reset">Clear form</button>
+        </p>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <h2>StudentHub</h2>
+    <nav aria-label="Footer">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+    </nav>
+    <p><small>&copy; 2026 StudentHub. Practical project &mdash; no real data is stored.</small></p>
+  </footer>
+
+</body>
+</html>

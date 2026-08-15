@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | StudentHub</title>
+  <meta name="description" content="Create a new StudentHub account.">
+</head>
+<body>
+
+  <a href="#main">Skip to main content</a>
+
+  <header>
+    <p><strong>StudentHub</strong> &mdash; Student Portal</p>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html" aria-current="page">Register</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="Student Portal">
+      <ul>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <nav aria-label="Breadcrumb">
+    <ol>
+      <li><a href="index.html">Home</a></li>
+      <li aria-current="page">Register</li>
+    </ol>
+  </nav>
+
+  <main id="main">
+
+    <h1>Create your student account</h1>
+    <p>All fields marked <abbr title="required">*</abbr> are required. This form does not submit anywhere; it is a static demonstration page.</p>
+
+    <form action="#" method="post">
+
+      <fieldset>
+        <legend>Personal details</legend>
+
+        <p>
+          <label for="fullname">Full name <abbr title="required">*</abbr></label><br>
+          <input type="text" id="fullname" name="fullname" autocomplete="name" required>
+        </p>
+
+        <p>
+          <label for="email">Email address <abbr title="required">*</abbr></label><br>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+        </p>
+
+        <p>
+          <label for="phone">Phone number</label><br>
+          <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="e.g. 9876543210">
+        </p>
+
+        <p>
+          <label for="dob">Date of birth</label><br>
+          <input type="date" id="dob" name="dob">
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Academic details</legend>
+
+        <p>
+          <label for="roll">Roll number <abbr title="required">*</abbr></label><br>
+          <input type="text" id="roll" name="roll" required>
+        </p>
+
+        <p>
+          <label for="department">Department <abbr title="required">*</abbr></label><br>
+          <select id="department" name="department" required>
+            <option value="">Select a department</option>
+            <option value="cse">Computer Science &amp; Engineering</option>
+            <option value="ece">Electronics &amp; Communication</option>
+            <option value="me">Mechanical Engineering</option>
+            <option value="ce">Civil Engineering</option>
+            <option value="ba">Business Administration</option>
+          </select>
+        </p>
+
+        <p>
+          <label for="year">Year of study</label><br>
+          <select id="year" name="year">
+            <option value="1">First year</option>
+            <option value="2">Second year</option>
+            <option value="3">Third year</option>
+            <option value="4">Fourth year</option>
+          </select>
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Account security</legend>
+
+        <p>
+          <label for="password">Password <abbr title="required">*</abbr></label><br>
+          <input type="password" id="password" name="password" autocomplete="new-password" required minlength="8">
+        </p>
+
+        <p>
+          <label for="confirm-password">Confirm password <abbr title="required">*</abbr></label><br>
+          <input type="password" id="confirm-password" name="confirm-password" autocomplete="new-password" required minlength="8">
+        </p>
+      </fieldset>
+
+      <p>
+        <input type="checkbox" id="terms" name="terms" required>
+        <label for="terms">I agree to the StudentHub terms of use <abbr title="required">*</abbr></label>
+      </p>
+
+      <p>
+        <button type="submit">Create account</button>
+        <button type="reset">Clear form</button>
+      </p>
+    </form>
+
+    <p>Already have an account? <a href="login.html">Log in here</a>.</p>
+
+  </main>
+
+  <footer>
+    <h2>StudentHub</h2>
+    <nav aria-label="Footer">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <p><small>&copy; 2026 StudentHub. Practical project &mdash; no real data is stored.</small></p>
+  </footer>
+
+</body>
+</html>

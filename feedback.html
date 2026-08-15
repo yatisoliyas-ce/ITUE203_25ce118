@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback | StudentHub</title>
+  <meta name="description" content="Share feedback about StudentHub.">
+</head>
+<body>
+
+  <a href="#main">Skip to main content</a>
+
+  <header>
+    <p><strong>StudentHub</strong> &mdash; Student Portal</p>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="Student Portal">
+      <ul>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="feedback.html" aria-current="page">Feedback</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <nav aria-label="Breadcrumb">
+    <ol>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="dashboard.html">Student Portal</a></li>
+      <li aria-current="page">Feedback</li>
+    </ol>
+  </nav>
+
+  <main id="main">
+
+    <h1>Send feedback</h1>
+    <p>Your comments help improve StudentHub. This form does not submit anywhere; it is a static demonstration page.</p>
+
+    <form action="#" method="post">
+      <fieldset>
+        <legend>What is this feedback about?</legend>
+        <p>
+          <input type="radio" id="topic-usability" name="topic" value="usability" checked>
+          <label for="topic-usability">Usability</label>
+        </p>
+        <p>
+          <input type="radio" id="topic-accessibility" name="topic" value="accessibility">
+          <label for="topic-accessibility">Accessibility</label>
+        </p>
+        <p>
+          <input type="radio" id="topic-content" name="topic" value="content">
+          <label for="topic-content">Content accuracy</label>
+        </p>
+        <p>
+          <input type="radio" id="topic-other" name="topic" value="other">
+          <label for="topic-other">Other</label>
+        </p>
+      </fieldset>
+
+      <p>
+        <label for="f-rating">Overall rating</label><br>
+        <select id="f-rating" name="rating">
+          <option value="5">5 &mdash; Excellent</option>
+          <option value="4">4 &mdash; Good</option>
+          <option value="3" selected>3 &mdash; Average</option>
+          <option value="2">2 &mdash; Poor</option>
+          <option value="1">1 &mdash; Very poor</option>
+        </select>
+      </p>
+
+      <p>
+        <label for="f-comments">Your comments <abbr title="required">*</abbr></label><br>
+        <textarea id="f-comments" name="comments" rows="6" cols="50" required></textarea>
+      </p>
+
+      <p>
+        <label for="f-email">Email address (optional, if you'd like a reply)</label><br>
+        <input type="email" id="f-email" name="email" autocomplete="email">
+      </p>
+
+      <p>
+        <button type="submit">Submit feedback</button>
+        <button type="reset">Clear form</button>
+      </p>
+    </form>
+
+  </main>
+
+  <footer>
+    <h2>StudentHub</h2>
+    <nav aria-label="Footer">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <p><small>&copy; 2026 StudentHub. Practical project &mdash; no real data is stored.</small></p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile | StudentHub</title>
+  <meta name="description" content="Manage your StudentHub profile details.">
+</head>
+<body>
+
+  <a href="#main">Skip to main content</a>
+
+  <header>
+    <p><strong>StudentHub</strong> &mdash; Student Portal</p>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="Student Portal">
+      <ul>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="profile.html" aria-current="page">Profile</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <nav aria-label="Breadcrumb">
+    <ol>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="dashboard.html">Student Portal</a></li>
+      <li aria-current="page">Profile</li>
+    </ol>
+  </nav>
+
+  <main id="main">
+
+    <h1>Your profile</h1>
+
+    <section aria-labelledby="current-heading">
+      <h2 id="current-heading">Current details</h2>
+      <dl>
+        <dt>Name</dt>
+        <dd>Yati Soliya</dd>
+        <dt>Roll number</dt>
+        <dd>25CE118</dd>
+        <dt>Department</dt>
+        <dd>Computer Engineering</dd>
+        <dt>Year</dt>
+        <dd>Second year</dd>
+        <dt>Email</dt>
+        <dd>25ce118@charusat.edu.in</dd>
+        <dt>Phone</dt>
+        <dd>+91 98765 43210</dd>
+      </dl>
+    </section>
+
+    <section aria-labelledby="edit-heading">
+      <h2 id="edit-heading">Edit profile</h2>
+      <p>This form does not submit anywhere; it is a static demonstration page.</p>
+
+      <form action="#" method="post">
+        <p>
+          <label for="p-name">Full name</label><br>
+          <input type="text" id="p-name" name="name" value="Yati Soliya" autocomplete="name">
+        </p>
+
+        <p>
+          <label for="p-email">Email address</label><br>
+          <input type="email" id="p-email" name="email" value="25ce118@charusat.edu.in" autocomplete="email">
+        </p>
+
+        <p>
+          <label for="p-phone">Phone number</label><br>
+          <input type="tel" id="p-phone" name="phone" value="+919876543210" autocomplete="tel">
+        </p>
+
+        <p>
+          <label for="p-bio">Short bio</label><br>
+          <textarea id="p-bio" name="bio" rows="4" cols="40">Second year CE student interested in web development and accessibility.</textarea>
+        </p>
+
+        <p>
+          <button type="submit">Save changes</button>
+          <button type="reset">Discard changes</button>
+        </p>
+      </form>
+    </section>
+
+    <section aria-labelledby="preferences-heading">
+      <h2 id="preferences-heading">Notification preferences</h2>
+      <form action="#" method="post">
+        <p>
+          <input type="checkbox" id="notify-events" name="notify" value="events" checked>
+          <label for="notify-events">Notify me about new events</label>
+        </p>
+        <p>
+          <input type="checkbox" id="notify-grades" name="notify" value="grades" checked>
+          <label for="notify-grades">Notify me about grade updates</label>
+        </p>
+        <p>
+          <input type="checkbox" id="notify-notices" name="notify" value="notices">
+          <label for="notify-notices">Notify me about general notices</label>
+        </p>
+        <p>
+          <button type="submit">Update preferences</button>
+        </p>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <h2>StudentHub</h2>
+    <nav aria-label="Footer">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <p><small>&copy; 2026 StudentHub. Practical project &mdash; no real data is stored.</small></p>
+  </footer>
+
+</body>
+</html>
