@@ -1,153 +1,445 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register | StudentHub</title>
-  <link rel="stylesheet" href="style.css">
-  <meta name="description" content="Create a new StudentHub account.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | StudentHub</title>
+    <meta name="description" content="Register as a student on StudentHub.">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .registration-card {
+            max-width: 700px;
+            margin: 24px auto;
+        }
+
+        .registration-form {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr);
+            gap: 16px;
+        }
+
+        .registration-form .form-group {
+            min-width: 0;
+        }
+
+        .registration-form label,
+        .registration-form legend {
+            font-weight: 600;
+        }
+
+        .registration-form .form-group > label {
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .registration-form input:not([type="radio"]):not([type="checkbox"]),
+        .registration-form select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: var(--surface);
+            color: var(--text);
+        }
+
+        .registration-form fieldset {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 12px;
+        }
+
+        .registration-form .gender-option {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin: 8px 16px 0 0;
+        }
+
+        .registration-form .error {
+            display: block;
+            color: #c62828;
+            font-size: 0.9rem;
+            margin-top: 4px;
+        }
+
+        .registration-form input[aria-invalid="true"],
+        .registration-form select[aria-invalid="true"] {
+            border-color: #c62828;
+        }
+
+        #passwordStrength {
+            margin-top: 6px;
+            font-size: 0.9rem;
+        }
+
+        #successMessage {
+            color: #15803d;
+            font-weight: 600;
+        }
+
+        .registration-form button[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            cursor: pointer;
+        }
+
+        @media (min-width: 600px) {
+            .registration-form .two-column {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 16px;
+            }
+        }
+    </style>
 </head>
+
 <body>
+    <a href="#main">Skip to main content</a>
 
-  <a href="#main">Skip to main content</a>
+    <header>
+        <p><strong>StudentHub</strong> &mdash; Student Portal</p>
 
-  <header>
-    <p><strong>StudentHub</strong> &mdash; Student Portal</p>
-    <nav aria-label="Primary">
-    <!-- Hamburger Menu Button -->
-    <button id="hamburger" aria-label="Toggle navigation">☰</button>
+        <nav aria-label="Primary">
+            <button id="hamburger" aria-label="Toggle navigation"
+                    aria-expanded="false">☰</button>
 
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="login.html">Login</a></li>
-        <li><a href="register.html">Register</a></li>
-    </ul>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html" aria-current="page">Register</a></li>
+            </ul>
 
-    <!-- Theme Switcher Button -->
-    <button id="theme-toggle" aria-label="Toggle dark mode">🌙 / ☀️</button>
-</nav>
-    <nav aria-label="Student Portal">
-      <ul>
-        <li><a href="dashboard.html">Dashboard</a></li>
-        <li><a href="profile.html">Profile</a></li>
-        <li><a href="feedback.html">Feedback</a></li>
-      </ul>
+            <button id="theme-toggle" aria-label="Toggle dark mode">
+                🌙 / ☀️
+            </button>
+        </nav>
+
+        <nav aria-label="Student Portal">
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <nav aria-label="Breadcrumb">
+        <ol>
+            <li><a href="index.html">Home</a></li>
+            <li aria-current="page">Register</li>
+        </ol>
     </nav>
-  </header>
 
-  <nav aria-label="Breadcrumb">
-    <ol>
-      <li><a href="index.html">Home</a></li>
-      <li aria-current="page">Register</li>
-    </ol>
-  </nav>
+    <main id="main">
+        <section class="registration-card">
+            <h1>Student Registration</h1>
+            <p>Enter your details to register with StudentHub.</p>
 
-  <main id="main">
+            <form id="registrationForm" class="registration-form" novalidate>
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name"
+                           autocomplete="name" required
+                           aria-describedby="nameError">
+                    <span class="error" id="nameError"></span>
+                </div>
 
-    <h1>Create your student account</h1>
-    <p>All fields marked <abbr title="required">*</abbr> are required. This form does not submit anywhere; it is a static demonstration page.</p>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email"
+                           autocomplete="email" required
+                           aria-describedby="emailError">
+                    <span class="error" id="emailError"></span>
+                </div>
 
-    <form action="#" method="post">
+                <div class="form-group">
+                    <label for="mobile">Mobile Number</label>
+                    <input type="tel" id="mobile" name="mobile"
+                           inputmode="numeric" maxlength="10"
+                           autocomplete="tel" required
+                           aria-describedby="mobileError">
+                    <span class="error" id="mobileError"></span>
+                </div>
 
-      <fieldset>
-        <legend>Personal details</legend>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password"
+                           autocomplete="new-password" required
+                           aria-describedby="passwordStrength passwordError">
+                    <div id="passwordStrength" aria-live="polite">
+                        Password strength: Not entered
+                    </div>
+                    <span class="error" id="passwordError"></span>
+                </div>
 
-        <p>
-          <label for="fullname">Full name <abbr title="required">*</abbr></label><br>
-          <input type="text" id="fullname" name="fullname" autocomplete="name" required>
-        </p>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword"
+                           name="confirmPassword"
+                           autocomplete="new-password" required
+                           aria-describedby="confirmPasswordError">
+                    <span class="error" id="confirmPasswordError"></span>
+                </div>
 
-        <p>
-          <label for="email">Email address <abbr title="required">*</abbr></label><br>
-          <input type="email" id="email" name="email" autocomplete="email" required>
-        </p>
+                <div class="form-group">
+                    <label for="course">Course</label>
+                    <select id="course" name="course" required
+                            aria-describedby="courseError">
+                        <option value="">Select Course</option>
+                        <option value="Computer Engineering">Computer Engineering</option>
+                        <option value="Information Technology">Information Technology</option>
+                        <option value="Mechanical Engineering">Mechanical Engineering</option>
+                        <option value="Civil Engineering">Civil Engineering</option>
+                        <option value="Electrical Engineering">Electrical Engineering</option>
+                    </select>
+                    <span class="error" id="courseError"></span>
+                </div>
 
-        <p>
-          <label for="phone">Phone number</label><br>
-          <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="e.g. 9876543210">
-        </p>
+                <div class="form-group">
+                    <label for="year">Year of Study</label>
+                    <select id="year" name="year" required
+                            aria-describedby="yearError">
+                        <option value="">Select Year</option>
+                        <option value="1">First Year</option>
+                        <option value="2">Second Year</option>
+                        <option value="3">Third Year</option>
+                        <option value="4">Fourth Year</option>
+                    </select>
+                    <span class="error" id="yearError"></span>
+                </div>
 
-        <p>
-          <label for="dob">Date of birth</label><br>
-          <input type="date" id="dob" name="dob">
-        </p>
-      </fieldset>
+                <fieldset class="form-group">
+                    <legend>Gender</legend>
 
-      <fieldset>
-        <legend>Academic details</legend>
+                    <label class="gender-option">
+                        <input type="radio" name="gender" value="Female">
+                        Female
+                    </label>
 
-        <p>
-          <label for="roll">Roll number <abbr title="required">*</abbr></label><br>
-          <input type="text" id="roll" name="roll" required>
-        </p>
+                    <label class="gender-option">
+                        <input type="radio" name="gender" value="Male">
+                        Male
+                    </label>
 
-        <p>
-          <label for="department">Department <abbr title="required">*</abbr></label><br>
-          <select id="department" name="department" required>
-            <option value="">Select a department</option>
-            <option value="cse">Computer Science &amp; Engineering</option>
-            <option value="ece">Electronics &amp; Communication</option>
-            <option value="me">Mechanical Engineering</option>
-            <option value="ce">Civil Engineering</option>
-            <option value="ba">Business Administration</option>
-          </select>
-        </p>
+                    <label class="gender-option">
+                        <input type="radio" name="gender" value="Other">
+                        Other
+                    </label>
 
-        <p>
-          <label for="year">Year of study</label><br>
-          <select id="year" name="year">
-            <option value="1">First year</option>
-            <option value="2">Second year</option>
-            <option value="3">Third year</option>
-            <option value="4">Fourth year</option>
-          </select>
-        </p>
-      </fieldset>
+                    <span class="error" id="genderError"></span>
+                </fieldset>
 
-      <fieldset>
-        <legend>Account security</legend>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="terms" name="terms">
+                        I agree to the terms and conditions.
+                    </label>
+                    <span class="error" id="termsError"></span>
+                </div>
 
-        <p>
-          <label for="password">Password <abbr title="required">*</abbr></label><br>
-          <input type="password" id="password" name="password" autocomplete="new-password" required minlength="8">
-        </p>
+                <button type="submit">Register</button>
 
-        <p>
-          <label for="confirm-password">Confirm password <abbr title="required">*</abbr></label><br>
-          <input type="password" id="confirm-password" name="confirm-password" autocomplete="new-password" required minlength="8">
-        </p>
-      </fieldset>
+                <p id="successMessage" role="status"
+                   aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
 
-      <p>
-        <input type="checkbox" id="terms" name="terms" required>
-        <label for="terms">I agree to the StudentHub terms of use <abbr title="required">*</abbr></label>
-      </p>
+    <footer>
+        <h2>StudentHub</h2>
 
-      <p>
-        <button type="submit">Create account</button>
-        <button type="reset">Clear form</button>
-      </p>
-    </form>
+        <nav aria-label="Footer">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
 
-    <p>Already have an account? <a href="login.html">Log in here</a>.</p>
+        <address>
+            StudentHub Registrar's Office, Block C, Main Campus.<br>
+            Email:
+            <a href="mailto:support@studenthub.example">
+                support@studenthub.example
+            </a>
+        </address>
 
-  </main>
+        <p><small>&copy; 2026 StudentHub. Practical project &mdash; no real data is stored.</small></p>
+    </footer>
 
-  <footer>
-    <h2>StudentHub</h2>
-    <nav aria-label="Footer">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="login.html">Login</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <p><small>&copy; 2026 StudentHub. Practical project &mdash; no real data is stored.</small></p>
-  </footer>
-<script src="script.js"></script>
+    <script>
+        const registrationForm = document.getElementById("registrationForm");
+
+        const fieldIds = [
+            "name",
+            "email",
+            "mobile",
+            "password",
+            "confirmPassword",
+            "course",
+            "year"
+        ];
+
+        function setError(id, message) {
+            const field = document.getElementById(id);
+            const error = document.getElementById(id + "Error");
+
+            error.textContent = message;
+
+            if (field) {
+                field.setAttribute(
+                    "aria-invalid",
+                    message ? "true" : "false"
+                );
+            }
+        }
+
+        function clearErrors() {
+            fieldIds.forEach(function (id) {
+                setError(id, "");
+            });
+
+            setError("gender", "");
+            setError("terms", "");
+
+            document.getElementById("successMessage").textContent = "";
+        }
+
+        function validateRegistration() {
+            clearErrors();
+
+            let valid = true;
+
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const mobile = document.getElementById("mobile").value.trim();
+            const password = document.getElementById("password").value;
+            const confirmPassword =
+                document.getElementById("confirmPassword").value;
+            const course = document.getElementById("course").value;
+            const year = document.getElementById("year").value;
+            const gender = document.querySelector(
+                'input[name="gender"]:checked'
+            );
+            const terms = document.getElementById("terms").checked;
+
+            if (!/^[A-Za-z ]{2,50}$/.test(name)) {
+                setError("name", "Enter a valid name using letters and spaces.");
+                valid = false;
+            }
+
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                setError("email", "Enter a valid email address.");
+                valid = false;
+            }
+
+            if (!/^[6-9]\d{9}$/.test(mobile)) {
+                setError("mobile", "Enter a valid 10-digit Indian mobile number.");
+                valid = false;
+            }
+
+            if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/.test(password)) {
+                setError(
+                    "password",
+                    "Use at least 8 characters, including uppercase, lowercase, a number and a symbol."
+                );
+                valid = false;
+            }
+
+            if (confirmPassword === "" || confirmPassword !== password) {
+                setError("confirmPassword", "Passwords do not match.");
+                valid = false;
+            }
+
+            if (!course) {
+                setError("course", "Please select your course.");
+                valid = false;
+            }
+
+            if (!year) {
+                setError("year", "Please select your year of study.");
+                valid = false;
+            }
+
+            if (!gender) {
+                setError("gender", "Please select a gender.");
+                valid = false;
+            }
+
+            if (!terms) {
+                setError("terms", "Please accept the terms and conditions.");
+                valid = false;
+            }
+
+            return valid;
+        }
+
+        document.getElementById("password").addEventListener("input", function () {
+            const password = this.value;
+            let score = 0;
+
+            if (password.length >= 8) score++;
+            if (/[a-z]/.test(password)) score++;
+            if (/[A-Z]/.test(password)) score++;
+            if (/\d/.test(password)) score++;
+            if (/[^A-Za-z0-9]/.test(password)) score++;
+
+            let strength = "Weak";
+
+            if (password.length === 0) {
+                strength = "Not entered";
+            } else if (score >= 5) {
+                strength = "Strong";
+            } else if (score >= 3) {
+                strength = "Medium";
+            }
+
+            document.getElementById("passwordStrength").textContent =
+                "Password strength: " + strength;
+
+            setError("password", "");
+            document.getElementById("successMessage").textContent = "";
+        });
+
+        fieldIds.forEach(function (id) {
+            const field = document.getElementById(id);
+
+            field.addEventListener("input", function () {
+                setError(id, "");
+                document.getElementById("successMessage").textContent = "";
+            });
+
+            field.addEventListener("change", function () {
+                setError(id, "");
+            });
+        });
+
+        document.querySelectorAll('input[name="gender"]').forEach(function (radio) {
+            radio.addEventListener("change", function () {
+                setError("gender", "");
+            });
+        });
+
+        document.getElementById("terms").addEventListener("change", function () {
+            setError("terms", "");
+        });
+
+        registrationForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            if (validateRegistration()) {
+                document.getElementById("successMessage").textContent =
+                    "Registration form validated successfully!";
+            }
+        });
+    </script>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -516,9 +516,77 @@ body.dark-mode a:hover {
     overflow-x: auto;
     white-space: nowrap;
   }
-
-  th,
-  td {
+th, td {
     padding: 0.5rem;
   }
+  /* Dark mode fixes for all pages */
+body.dark-mode {
+    background: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode main > section,
+body.dark-mode main > article,
+body.dark-mode main > aside,
+body.dark-mode main > div,
+body.dark-mode main > form,
+body.dark-mode form,
+body.dark-mode table,
+body.dark-mode fieldset {
+    background: #1e1e1e;
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode p,
+body.dark-mode label,
+body.dark-mode legend,
+body.dark-mode li,
+body.dark-mode td {
+    color: #e0e0e0;
+}
+
+body.dark-mode input:not([type="checkbox"]):not([type="radio"]),
+body.dark-mode select,
+body.dark-mode textarea {
+    background: #2a2a2a;
+    color: #fff;
+    border-color: #555;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+    color: #bbb;
+}
+
+body.dark-mode > nav[aria-label="Breadcrumb"] {
+    background: #1e1e1e;
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+body.dark-mode > nav[aria-label="Breadcrumb"] a {
+    color: #8ab4f8;
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+    background: #1a1a1a;
+    color: #fff;
+}
+
+body.dark-mode header p,
+body.dark-mode header a,
+body.dark-mode footer a {
+    color: #fff;
+}
+
+body.dark-mode #theme-toggle {
+    color: #fff;
+    border-color: #aaa;
+}
+
 }
