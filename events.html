@@ -14,16 +14,22 @@
   <header>
     <p><strong>StudentHub</strong> &mdash; Student Portal</p>
     <nav aria-label="Primary">
-      <ul>
+    <!-- Hamburger Menu Button -->
+    <button id="hamburger" aria-label="Toggle navigation">☰</button>
+
+    <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="events.html" aria-current="page">Events</a></li>
+        <li><a href="events.html">Events</a></li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="login.html">Login</a></li>
         <li><a href="register.html">Register</a></li>
-      </ul>
-    </nav>
+    </ul>
+
+    <!-- Theme Switcher Button -->
+    <button id="theme-toggle" aria-label="Toggle dark mode">🌙 / ☀️</button>
+</nav>
     <nav aria-label="Student Portal">
       <ul>
         <li><a href="dashboard.html">Dashboard</a></li>
@@ -101,6 +107,6 @@
     </nav>
     <p><small>&copy; 2026 StudentHub. Practical project &mdash; no real data is stored.</small></p>
   </footer>
-
+<script src="script.js"></script>
 </body>
 </html>

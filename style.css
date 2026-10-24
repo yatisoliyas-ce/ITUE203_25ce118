@@ -1,5 +1,4 @@
-/* StudentHub — Practical 3: Responsive UI
-   Mobile-first CSS using Flexbox, CSS Grid, and media queries.
+/* StudentHub — Practical 
 */
 
 :root {
@@ -31,6 +30,7 @@ body {
   line-height: 1.6;
   color: var(--text);
   background: var(--background);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 img {
@@ -96,6 +96,29 @@ header a {
 header a:hover,
 header a[aria-current="page"] {
   background: var(--accent);
+}
+
+/* Hide Hamburger button by default on desktop */
+#hamburger {
+  display: none;
+  background: none;
+  border: 1px solid #fff;
+  color: #fff;
+  font-size: 1.3rem;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Theme Switcher Button */
+#theme-toggle {
+  cursor: pointer;
+  background: none;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  margin-left: 0.5rem;
 }
 
 body > nav[aria-label="Breadcrumb"] {
@@ -184,7 +207,6 @@ main > article > h2:first-child {
   margin-top: 0;
 }
 
-/* Flexbox keeps navigation and grouped actions wrapping on smaller screens. */
 header,
 footer {
   display: flex;
@@ -192,7 +214,6 @@ footer {
   gap: 0.5rem;
 }
 
-/* Grid gives cards and content sections responsive columns where supported. */
 main > section,
 main > article {
   display: grid;
@@ -242,7 +263,7 @@ textarea {
   resize: vertical;
 }
 
-button,
+button:not(#hamburger):not(#theme-toggle),
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
@@ -256,7 +277,7 @@ input[type="button"] {
   cursor: pointer;
 }
 
-button:hover,
+button:not(#hamburger):not(#theme-toggle):hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover {
@@ -321,7 +342,67 @@ small,
   color: var(--muted);
 }
 
-/* Tablet: use more horizontal space and two-column content/forms. */
+/* 
+   Practical 4: Dark Mode Styling (Global)
+   */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+  background-color: #1a1a1a;
+  border-color: #333;
+}
+
+body.dark-mode .card,
+body.dark-mode main > section,
+body.dark-mode main > article,
+body.dark-mode main > form,
+body.dark-mode body > nav[aria-label="Breadcrumb"],
+body.dark-mode table,
+body.dark-mode th {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border-color: #333;
+}
+
+body.dark-mode th {
+  color: #66b3ff;
+}
+
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border-color: #444;
+}
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode label,
+body.dark-mode li,
+body.dark-mode td,
+body.dark-mode a {
+  color: #e0e0e0;
+}
+
+body.dark-mode a:hover {
+  color: #66b3ff;
+}
+
+/* 
+   Media Queries (Responsive Layout & Mobile Menu)
+    */
+
+/* Tablet */
 @media (min-width: 600px) {
   main {
     width: min(1120px, 90%);
@@ -362,7 +443,7 @@ small,
   }
 }
 
-/* Desktop: wider content, three-column cards when there are enough items. */
+/* Desktop */
 @media (min-width: 900px) {
   main {
     width: min(1120px, 88%);
@@ -384,7 +465,25 @@ small,
   }
 }
 
-/* Small phones: avoid overflow and keep tables usable. */
+/* Mobile Menu & Small Screens */
+@media (max-width: 767px) {
+  #hamburger {
+    display: block;
+  }
+
+  #nav-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  #nav-menu.active {
+    display: flex;
+  }
+}
+
+/* Small phones */
 @media (max-width: 599px) {
   header {
     padding: 1rem 4%;
