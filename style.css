@@ -1,0 +1,425 @@
+/* StudentHub — Practical 3: Responsive UI
+   Mobile-first CSS using Flexbox, CSS Grid, and media queries.
+*/
+
+:root {
+  --primary: #243b6b;
+  --primary-dark: #172747;
+  --accent: #5577bd;
+  --background: #f4f7fb;
+  --surface: #ffffff;
+  --text: #202633;
+  --muted: #5c6678;
+  --border: #dce3ed;
+  --success: #e8f7ee;
+  --radius: 12px;
+  --shadow: 0 6px 20px rgba(25, 43, 76, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--background);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--primary);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #f0b429;
+  outline-offset: 3px;
+}
+
+header {
+  background: var(--primary);
+  color: #fff;
+  padding: 1rem 5%;
+}
+
+header p {
+  margin: 0 0 0.75rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+header nav {
+  display: inline-block;
+  margin: 0.2rem 0.6rem 0.2rem 0;
+}
+
+nav ul,
+nav ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+header nav li {
+  margin: 0;
+}
+
+header a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.45rem 0.65rem;
+  border-radius: 7px;
+}
+
+header a:hover,
+header a[aria-current="page"] {
+  background: var(--accent);
+}
+
+body > nav[aria-label="Breadcrumb"] {
+  background: var(--surface);
+  padding: 0.65rem 5%;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.92rem;
+}
+
+body > nav[aria-label="Breadcrumb"] ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+body > nav[aria-label="Breadcrumb"] li:not(:last-child)::after {
+  content: " /";
+  color: var(--muted);
+}
+
+main {
+  width: min(1120px, 92%);
+  margin: 1.5rem auto;
+  min-height: 55vh;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--primary-dark);
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  margin: 0 0 1rem;
+}
+
+h2 {
+  font-size: clamp(1.25rem, 2.5vw, 1.65rem);
+  margin-top: 1.5rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+}
+
+p {
+  margin-top: 0.5rem;
+}
+
+section,
+article,
+aside,
+form,
+main > div {
+  min-width: 0;
+}
+
+section,
+article,
+aside {
+  margin-bottom: 1.25rem;
+}
+
+main > section,
+main > article,
+main > aside,
+main > form,
+main > div,
+form,
+article {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+}
+
+main > h1 + p {
+  color: var(--muted);
+}
+
+main > section > h2:first-child,
+main > article > h2:first-child {
+  margin-top: 0;
+}
+
+/* Flexbox keeps navigation and grouped actions wrapping on smaller screens. */
+header,
+footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Grid gives cards and content sections responsive columns where supported. */
+main > section,
+main > article {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.8rem;
+}
+
+main > section > h2,
+main > article > h2 {
+  grid-column: 1 / -1;
+}
+
+form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.8rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+input,
+select,
+textarea,
+button {
+  font: inherit;
+}
+
+input,
+select,
+textarea {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  padding: 0.7rem 0.75rem;
+  border: 1px solid #aeb9ca;
+  border-radius: 7px;
+  background: #fff;
+  color: var(--text);
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  width: auto;
+  max-width: 100%;
+  padding: 0.65rem 1rem;
+  border: 0;
+  border-radius: 7px;
+  background: var(--primary);
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover {
+  background: var(--primary-dark);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline-block;
+  width: auto;
+  margin-right: 0.4rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  background: var(--surface);
+}
+
+th,
+td {
+  border: 1px solid var(--border);
+  padding: 0.65rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: #e9eef8;
+  color: var(--primary-dark);
+}
+
+footer {
+  background: var(--primary-dark);
+  color: #fff;
+  padding: 1.2rem 5%;
+  margin-top: 2rem;
+}
+
+footer a {
+  color: #fff;
+}
+
+ul,
+ol {
+  padding-left: 1.35rem;
+}
+
+li {
+  margin-bottom: 0.25rem;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 1.25rem 0;
+}
+
+small,
+.muted {
+  color: var(--muted);
+}
+
+/* Tablet: use more horizontal space and two-column content/forms. */
+@media (min-width: 600px) {
+  main {
+    width: min(1120px, 90%);
+    margin: 2rem auto;
+  }
+
+  main > section,
+  main > article {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 1.25rem;
+  }
+
+  form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 1.25rem;
+  }
+
+  form > h2,
+  form > p,
+  form > fieldset,
+  form > textarea,
+  form > button,
+  form > input[type="submit"],
+  form > input[type="reset"],
+  form > .full-width {
+    grid-column: 1 / -1;
+  }
+
+  header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  header p {
+    margin: 0;
+  }
+}
+
+/* Desktop: wider content, three-column cards when there are enough items. */
+@media (min-width: 900px) {
+  main {
+    width: min(1120px, 88%);
+  }
+
+  main > section:has(> article),
+  main > article:has(> article) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  main > section,
+  main > article {
+    padding: 1.5rem;
+  }
+
+  form {
+    column-gap: 1.25rem;
+    row-gap: 1rem;
+  }
+}
+
+/* Small phones: avoid overflow and keep tables usable. */
+@media (max-width: 599px) {
+  header {
+    padding: 1rem 4%;
+  }
+
+  header nav ul {
+    gap: 0.2rem;
+  }
+
+  header a {
+    padding: 0.4rem 0.5rem;
+    font-size: 0.92rem;
+  }
+
+  main {
+    width: 92%;
+    margin: 1rem auto;
+  }
+
+  main > section,
+  main > article,
+  main > div,
+  main > form,
+  form {
+    padding: 0.85rem;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  th,
+  td {
+    padding: 0.5rem;
+  }
+}
