@@ -1,0 +1,123 @@
+
+[
+  {
+    "id": 1,
+    "name": "Aarav Patel",
+    "course": "Computer Engineering",
+    "year": 2,
+    "city": "Ahmedabad",
+    "skills": ["HTML", "CSS", "JavaScript"]
+  },
+  {
+    "id": 2,
+    "name": "Diya Shah",
+    "course": "Information Technology",
+    "year": 1,
+    "city": "Surat",
+    "skills": ["Python", "HTML"]
+  },
+  {
+    "id": 3,
+    "name": "Rohan Mehta",
+    "course": "Computer Engineering",
+    "year": 3,
+    "city": "Vadodara",
+    "skills": ["Java", "C++"]
+  },
+  {
+    "id": 4,
+    "name": "Ananya Desai",
+    "course": "Electronics Engineering",
+    "year": 2,
+    "city": "Rajkot",
+    "skills": ["Arduino", "C"]
+  },
+  {
+    "id": 5,
+    "name": "Vivaan Joshi",
+    "course": "Information Technology",
+    "year": 4,
+    "city": "Ahmedabad",
+    "skills": ["React", "JavaScript"]
+  },
+  {
+    "id": 6,
+    "name": "Isha Trivedi",
+    "course": "Computer Engineering",
+    "year": 1,
+    "city": "Gandhinagar",
+    "skills": ["Python", "C"]
+  },
+  {
+    "id": 7,
+    "name": "Krish Patel",
+    "course": "Mechanical Engineering",
+    "year": 3,
+    "city": "Surat",
+    "skills": ["AutoCAD", "MATLAB"]
+  },
+  {
+    "id": 8,
+    "name": "Mira Shah",
+    "course": "Information Technology",
+    "year": 2,
+    "city": "Vadodara",
+    "skills": ["SQL", "Java"]
+  },
+  {
+    "id": 9,
+    "name": "Aditya Parmar",
+    "course": "Computer Engineering",
+    "year": 4,
+    "city": "Rajkot",
+    "skills": ["Node.js", "MongoDB"]
+  },
+  {
+    "id": 10,
+    "name": "Kavya Patel",
+    "course": "Civil Engineering",
+    "year": 1,
+    "city": "Ahmedabad",
+    "skills": ["AutoCAD", "Design"]
+  },
+  {
+    "id": 11,
+    "name": "Reyansh Shah",
+    "course": "Electronics Engineering",
+    "year": 3,
+    "city": "Gandhinagar",
+    "skills": ["Embedded Systems", "C"]
+  },
+  {
+    "id": 12,
+    "name": "Sara Mehta",
+    "course": "Computer Engineering",
+    "year": 2,
+    "city": "Surat",
+    "skills": ["HTML", "CSS"]
+  },
+  {
+    "id": 13,
+    "name": "Dev Joshi",
+    "course": "Information Technology",
+    "year": 1,
+    "city": "Vadodara",
+    "skills": ["Python", "SQL"]
+  },
+  {
+    "id": 14,
+    "name": "Myra Desai",
+    "course": "Mechanical Engineering",
+    "year": 4,
+    "city": "Rajkot",
+    "skills": ["SolidWorks", "CAD"]
+  },
+  {
+    "id": 15,
+    "name": "Arjun Trivedi",
+    "course": "Computer Engineering",
+    "year": 3,
+    "city": "Ahmedabad",
+    "skills": ["JavaScript", "React"]
+  }
+]

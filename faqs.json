@@ -1,0 +1,93 @@
+
+[
+  {
+    "id": 1,
+    "category": "General",
+    "question": "What is StudentHub?",
+    "answer": "StudentHub is a platform for accessing student information, events, and college resources."
+  },
+  {
+    "id": 2,
+    "category": "Registration",
+    "question": "How do I register?",
+    "answer": "Open the registration page, fill in the required details, and submit the form."
+  },
+  {
+    "id": 3,
+    "category": "Account",
+    "question": "How can I log in?",
+    "answer": "Open the login page and enter your registered email and password."
+  },
+  {
+    "id": 4,
+    "category": "Events",
+    "question": "Where can I view college events?",
+    "answer": "Visit the Events page to explore upcoming college activities."
+  },
+  {
+    "id": 5,
+    "category": "Events",
+    "question": "How can I participate in an event?",
+    "answer": "Check the event details and follow the registration instructions provided."
+  },
+  {
+    "id": 6,
+    "category": "Profile",
+    "question": "Can I update my profile?",
+    "answer": "Open your profile page and update the available information."
+  },
+  {
+    "id": 7,
+    "category": "Account",
+    "question": "What should I do if I forget my password?",
+    "answer": "Use the password recovery option if available, or contact the administrator."
+  },
+  {
+    "id": 8,
+    "category": "Technical",
+    "question": "Which browsers support StudentHub?",
+    "answer": "Use an updated browser such as Chrome, Firefox, Edge, or Safari."
+  },
+  {
+    "id": 9,
+    "category": "Registration",
+    "question": "Why is my registration form showing errors?",
+    "answer": "Check that all required fields are filled correctly and that the entered information is valid."
+  },
+  {
+    "id": 10,
+    "category": "Events",
+    "question": "Can I search for events?",
+    "answer": "Use the search field on the events listing to find events by keywords."
+  },
+  {
+    "id": 11,
+    "category": "Profile",
+    "question": "Where can I view student details?",
+    "answer": "Visit the student directory to browse available student profiles."
+  },
+  {
+    "id": 12,
+    "category": "Technical",
+    "question": "What is JSON?",
+    "answer": "JSON is a text-based format used to store and exchange structured data."
+  },
+  {
+    "id": 13,
+    "category": "Technical",
+    "question": "Why is data loaded using Fetch API?",
+    "answer": "Fetch API allows JavaScript to request data asynchronously from a resource."
+  },
+  {
+    "id": 14,
+    "category": "Account",
+    "question": "Is my information automatically saved?",
+    "answer": "Information is saved only when the application implements a storage or server feature for it."
+  },
+  {
+    "id": 15,
+    "category": "General",
+    "question": "How can I report a problem?",
+    "answer": "Use the Contact or Feedback page to submit your issue if that feature is available."
+  }
+]
