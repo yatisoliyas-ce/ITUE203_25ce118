@@ -24,9 +24,13 @@ $_SESSION["last_activity"] = time();
 <body>
 
 <h2>Welcome, <?php echo htmlspecialchars($_SESSION["username"]); ?>!</h2>
-<p>Student Dashboard</p>
+<h3>Student Dashboard</h3>
 
-<a href="logout.php">Logout</a>
+<nav>
+    <a href="student_dashboard.php">Dashboard</a> |
+    <a href="practical12.php">Events</a> |
+    <a href="logout.php">Logout</a>
+</nav>
 
 </body>
 </html>
